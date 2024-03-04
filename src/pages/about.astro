@@ -1,0 +1,61 @@
+---
+import Sidebar from "../layouts/Sidebar.astro";
+import "../styles/global.scss";
+import "../styles/index.scss";
+import "../styles/about.scss";
+import { ViewTransitions } from 'astro:transitions';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/banana_favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Yihui Hu personal site" />
+    <title>About</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <div class="index-container">
+      <div id="sidebar">
+        <Sidebar />
+      </div>
+      <div class="about-page-wrapper">
+        <div class="about-page-container">
+          <span>Me</span>
+          <!--<div>-->
+          <!--  <img class="about-image" src="/assets/about/toe-recreation.gif" />-->
+          <!--  <span class="about-image-caption">c. Dec 2021</span>-->
+          <!--</div>-->
+          <div class="about" style={{ marginBottom: "55px" }}>
+            <span>Hello! I'm Tobias.</span>
+            <span>
+              I'm from Shanghai, China, and currently a CS student at Tufts. I am interested in designing and building
+              software that impact people's lives. During my free time, I like to stroll around the city, take photographs, and travel.
+            </span>
+            <span>
+              You can view my CV <a
+                href="https://drive.google.com/file/d/1O5RdirrU7IDvmsVPGWqLS91VsayWJtmD/view?usp=sharing"
+                target="_blank"
+                class="wavy-link">here</a
+              >.
+            </span>
+          </div>
+        </div>
+        <div class="back-button">
+          <span class="back-button">
+            <a class="gray-link" href="/public">Home</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const mobile = window.innerWidth <= 864 ? true : false;
+  document.getElementById("article-body")!.style.backgroundColor = mobile
+    ? "black"
+    : "";
+</script>
